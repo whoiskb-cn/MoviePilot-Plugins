@@ -474,5 +474,18 @@
     "history": {
       "v1.0": "新增LexiAnnot"
     }
+  },
+  "Jellyseerr": {
+    "name": "Jellyseerr通知推送",
+    "description": "监听Jellyseerr Webhook并通过MoviePilot微信通知进行推送。",
+    "labels": "通知,Webhook,Jellyseerr",
+    "version": "1.0",
+    "icon": "Wechat.png",
+    "author": "whoiskb",
+    "level": 1,
+    "v2": true,
+    "history": {
+      "v1.0": "首个版本，支持Jellyseerr Webhook消息推送到微信"
+    }
   }
 }
