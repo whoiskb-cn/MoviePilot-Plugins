@@ -1031,7 +1031,7 @@
     "v2": true
   }
     },
-  "WxPusherMsg": {
+  "Jellyseerr": {
     "name": "jellyseerr-Webhook通知",
     "description": "jellyseerr推送消息",
     "labels": "jellyseerr消息通知",
