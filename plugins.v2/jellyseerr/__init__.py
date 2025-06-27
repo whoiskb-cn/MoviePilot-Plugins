@@ -3,13 +3,13 @@ from .handler import register_event
 from typing import List, Dict, Any, Tuple
 
 
-class JellyseerrNotify(_PluginBase):
+class Jellyseerr(_PluginBase):
     plugin_name = "Jellyseerr通知推送"
     plugin_desc = "监听Jellyseerr Webhook并通过MoviePilot通知推送"
     plugin_icon = "Wechat.png"
     plugin_version = "1.0"
-    plugin_author = "whoiskb"
-    plugin_config_prefix = "jellyseerr_notify_"
+    plugin_author = "whoiskb-cn"
+    plugin_config_prefix = "jellyseerr"
     plugin_order = 99
     auth_level = 1
 
