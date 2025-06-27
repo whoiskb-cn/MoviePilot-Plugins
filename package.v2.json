@@ -486,6 +486,6 @@
     "v2": true,
     "history": {
       "v1.0": "首个版本，支持Jellyseerr Webhook消息推送到微信"
-    }
+     }
   }
 }
