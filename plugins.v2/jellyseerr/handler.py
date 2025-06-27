@@ -1,6 +1,5 @@
 from ...events import eventmanager, EventType, Event
 from ...helper.notification import NotificationHelper
-from ...schemas.types import MessageChannel
 from ...log import logger
 
 _notify_name = "wechat_notify"
@@ -18,10 +17,11 @@ def handle_webhook(event: Event):
     url = event.event_data.get("url", "")
     payload = event.event_data.get("payload")
 
+    # 确认请求是来自 jellyseerr webhook
     if not payload or "/webhook/jelly" not in url:
         return
 
-    event_type = payload.get("event")
+    event_type = payload.get("event", "未知事件")
     requested_by = payload.get("requestedBy", {}).get("displayName", "未知用户")
     media_title = payload.get("media", {}).get("title", "未知媒体")
 
@@ -32,7 +32,16 @@ def handle_webhook(event: Event):
     service = notifier.get_service(name=_notify_name)
 
     if service and service.instance:
-        logger.info(f"发送通知至：{_notify_name} -> {title}")
-        service.instance.send_text(title=title, text=text)
+        try:
+            logger.info(f"发送通知至：{_notify_name} -> {title}")
+            # 有的通知服务可能是 send_text，也可能是 send
+            if hasattr(service.instance, "send_text"):
+                service.instance.send_text(title=title, text=text)
+            elif hasattr(service.instance, "send"):
+                service.instance.send(title=title, text=text)
+            else:
+                logger.error(f"通知服务实例不支持发送方法")
+        except Exception as e:
+            logger.error(f"通知发送失败: {e}")
     else:
         logger.error(f"找不到通知服务：{_notify_name}")
