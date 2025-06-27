@@ -1035,7 +1035,7 @@
     "name": "jellyseerr-Webhook通知",
     "description": "jellyseerr推送消息",
     "labels": "jellyseerr消息通知",
-    "version": "1.0",
+    "version": "1.0.0",
     "icon": "Wchat.png",
     "author": "whoiskb-cn",
     "level": 1,
