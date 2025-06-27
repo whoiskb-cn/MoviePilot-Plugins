@@ -479,7 +479,7 @@
     "name": "Jellyseerr通知推送",
     "description": "监听Jellyseerr Webhook并通过MoviePilot微信通知进行推送。",
     "labels": "通知,Webhook,Jellyseerr",
-    "version": "1.0",
+    "version": "1.1",
     "icon": "Wechat.png",
     "author": "whoiskb-cn",
     "level": 1,
