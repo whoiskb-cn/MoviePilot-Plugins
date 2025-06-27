@@ -18,7 +18,7 @@ class WebhookNotify(_PluginBase):
     # 插件描述
     plugin_desc = "jellyseerr推送消息"
     # 插件图标
-    plugin_icon = "https://example.com/icon.png"
+    plugin_icon = "Wchat.png"
     # 插件版本
     plugin_version = "1.0.0"
     # 插件作者
